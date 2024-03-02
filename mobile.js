@@ -81,9 +81,12 @@ class Paper {
   }
 }
 
-const papers = Array.from(document.querySelectorAll('.paper'));
+// Ensure the DOM is fully loaded before querying for elements
+document.addEventListener('DOMContentLoaded', () => {
+  const papers = Array.from(document.querySelectorAll('.paper'));
 
-papers.forEach(paper => {
-  const p = new Paper();
-  p.init(paper);
+  papers.forEach(paper => {
+    const p = new Paper();
+    p.init(paper);
+  });
 });
